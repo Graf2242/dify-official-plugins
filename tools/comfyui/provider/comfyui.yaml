@@ -9,6 +9,24 @@ credentials_for_provider:
     required: true
     type: text-input
     url: https://docs.dify.ai/guides/tools/tool-configuration/comfyui
+  civitai_api_key:
+    label:
+      en_US: CivitAI API Key
+      zh_Hans: CivitAI API Key
+    placeholder:
+      en_US: Please input your CivitAI API Key
+      zh_Hans: 请输入你的 CivitAI API Key
+    required: false
+    type: text-input
+  hf_api_key:
+    label:
+      en_US: Hugging Face API Key
+      zh_Hans: Hugging Face API Key
+    placeholder:
+      en_US: Please input your Hugging Face API Key
+      zh_Hans: 请输入你的 Hugging Face API Key
+    required: false
+    type: text-input
 extra:
   python:
     source: provider/comfyui.py
@@ -23,7 +41,18 @@ identity:
     zh_Hans: ComfyUI
   name: comfyui
   tags:
-  - image
+    - image
 tools:
-- tools/comfyui_workflow.yaml
-- tools/comfyui_stable_diffusion.yaml
+  - tools/workflow.yaml
+  - tools/txt2img.yaml
+  - tools/img2img.yaml
+  - tools/img2vid.yaml
+  - tools/upscale.yaml
+  - tools/depth_anything.yaml
+  - tools/depth_pro.yaml
+  - tools/face_swap.yaml
+  - tools/list_models.yaml
+  - tools/list_samplers.yaml
+  - tools/image_info.yaml
+  - tools/download_civitai.yaml
+  - tools/download_huggingface.yaml
